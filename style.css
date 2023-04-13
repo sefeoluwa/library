@@ -17,6 +17,8 @@
     background-image: linear-gradient(62deg, #FF7AF5 0%, #513162 100%);
     height:100vh;
     width:100vw;
+    display:flex;
+    flex-direction: column;
 }
 
 .navbar{
@@ -68,16 +70,18 @@
 .add-book:hover{
     background-color: #fff;
     color:#513162;
+    border:none;
 }
 
 .footer{
-    margin-top: 82vh;
+    margin-top: 40vh;
     text-align: center;
     font-weight:bold;
+    margin-top: auto;
 }
 
 .book-form{
-    margin-top: 5vh;
+    margin: 5vh 12vw;
     padding:3%;
     height:35vh;
     width:60vw;
@@ -115,3 +119,42 @@ input{
     height:4vh;
     margin-top: 7vh;
 }
+
+.book-display{
+    width:50vw;
+    height:35vh;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #fff;
+    margin-left: 12vw;
+    color:#513162;
+    font-size: 1.2rem;
+}
+
+.result-title{
+    font-size: 1.3em;
+}
+
+.result-author{
+    font-size: 1.25em;
+}
+
+.result-read-status{
+    background-color: #513162;
+    color:#fff;
+    width:30vw;
+    height:4vh;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 4px;
+}
+
+.result-read-status.read {
+    background-color: red;
+  }
+
+  .book-form, .book-display{
+    display:none;
+  }
