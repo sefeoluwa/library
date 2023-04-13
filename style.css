@@ -9,7 +9,7 @@
 }
 
 .main{
-    
+    color:#fff;
     background-color: #FF7AF5;
     background-image: -webkit-linear-gradient(62deg, #FF7AF5 0%, #513162 100%);
     background-image: -moz-linear-gradient(62deg, #FF7AF5 0%, #513162 100%);
@@ -36,4 +36,36 @@
 
 .nav-text{
     font-size:1.2em;
+}
+
+.add-button{
+    display:flex;
+    justify-content: center;
+    margin-top: 4vh;
+    height: 5vh;
+    
+}
+
+.add-book{
+    width: 180px;
+    font-size: 1.2em;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: 4px solid #fff;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    color:#fff;
+    transition: all .3s ease-in;
+}
+
+.add-book i{
+    padding-right: 5px;
+}
+
+.add-book:hover{
+    background-color: #fff;
+    color:#513162;
 }
