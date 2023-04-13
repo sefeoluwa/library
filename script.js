@@ -1,7 +1,7 @@
 const addBtn = document.getElementById('add-book');
 const form = document.getElementById('book-form');
 const bookDisplay = document.querySelector('.book-display');
-const bookDisplayContainer = document.querySelector('.display-container')
+// const bookDisplayContainer = document.querySelector('.display-container')
 
 const myLibrary = [];
 // constructor function to get book info
@@ -86,35 +86,19 @@ function updateLibrary() {
       // Add the new book object to the myLibrary array
       myLibrary.push(book);
   
-      // Create a new div element for the display-container
-      const displayContainer = document.createElement("div");
-      displayContainer.classList.add("display-container");
-
+    
+//get display container
+    const displayContainer = document.querySelector('.display-container')
   
       // Create a new div element for each book in the myLibrary array
-      bookDisplayContainer.innerHTML = "";
+      displayContainer.innerHTML = "";
       for (let i = 0; i < myLibrary.length; i++) {
         const bookInfo = myLibrary[i].info();
         const bookElement = document.createElement("div");
         
         bookElement.innerHTML = bookInfo;
         displayContainer.appendChild(bookElement);
-      }
-  
-      // Replace the existing display-container with the new one
-      const existingDisplayContainer = document.querySelector(".display-container");
-      if (existingDisplayContainer) {
-        existingDisplayContainer.replaceWith(displayContainer);
-      } else {
-        bookDisplay.appendChild(displayContainer);
-      }
-
-      if (myLibrary.length >1){
-        displayContainer.style.display = 'none'
-      }
-
-      
-  
+      }  
       // Clear the form input fields
       form.reset();
       form.style.display = 'none';
