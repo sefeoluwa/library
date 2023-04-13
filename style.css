@@ -1,0 +1,39 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color: ;
+}
+
+.main{
+    
+    background-color: #FF7AF5;
+    background-image: -webkit-linear-gradient(62deg, #FF7AF5 0%, #513162 100%);
+    background-image: -moz-linear-gradient(62deg, #FF7AF5 0%, #513162 100%);
+    background-image: -o-linear-gradient(62deg, #FF7AF5 0%, #513162 100%);
+    background-image: linear-gradient(62deg, #FF7AF5 0%, #513162 100%);
+    height:100vh;
+    width:100vw;
+}
+
+.navbar{
+    height:6vh;
+    border-bottom: 5px solid #fff;
+}
+
+.nav{
+    display:flex;
+    justify-content: space-between;
+    padding: 12px 6%;
+}
+
+.nav-header{
+    font-size: 1.6em;
+}
+
+.nav-text{
+    font-size:1.2em;
+}
