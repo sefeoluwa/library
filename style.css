@@ -87,6 +87,7 @@
     width:60vw;
     background-color: #513162;
     font-size: 1.4em;
+
 }
 
 input{
@@ -120,6 +121,12 @@ input{
     margin-top: 7vh;
 }
 
+.display-container{
+    z-index:1000;
+    height:auto;
+    padding-left: 6vw;
+}
+
 .book-display{
     width:50vw;
     height:35vh;
@@ -129,8 +136,10 @@ input{
     justify-content: space-evenly;
     background-color: #fff;
     margin-left: 12vw;
+    margin-right:-5vw;
     color:#513162;
     font-size: 1.2rem;
+    
 }
 
 .result-title{
@@ -151,9 +160,6 @@ input{
     padding-top: 4px;
 }
 
-.result-read-status.read {
-    background-color: red;
-  }
 
   .book-form, .book-display{
     display:none;
