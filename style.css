@@ -180,16 +180,24 @@ input{
     align-self: center;
 }
 
-.result-read-status{
-    background-color: #513162;
-    color:#fff;
-    width:30vw;
+
+.unread-element{
+    background-color: var(--secondary-color);
+    width: 30vw;
     height:4vh;
     text-align: center;
-    font-weight: bold;
     padding-top: 4px;
+    cursor: pointer;
 }
-
-
+   
+.read-element{
+    background-color: var(--primary-color);
+    width: 30vw;
+    height:4vh;
+    text-align: center;
+    padding-top: 4px;
+    color: #fff;
+    cursor: pointer;
+}
    
 
