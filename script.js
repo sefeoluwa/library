@@ -76,7 +76,7 @@ function displayLibrary() {
     
     const readElement = document.createElement('p');
     readElement.textContent = `Status: ${book.isRead}`;
-    if (readElement === 'Read'){
+    if (readElement.textContent === 'Status: Read'){
         readElement.classList.add('read-element');
     } else {
         readElement.classList.add('unread-element');
