@@ -9,30 +9,29 @@ const submitBtn = document.getElementsByClassName('submit-btn');
 const displayContainer = document.getElementById('display');
 
 //declare book object
-class Book{
-    constructor(
-        title = 'Unknown',
-        author = 'Unknown',
-        pages = '0',
-        isRead = false,
-     ) {
-        this.title = title;
-        this.author = author;
-        this.pages = pages;
-        this.isRead = isRead;
-    }
-
+class Book {
+  constructor(
+    title = 'Unknown',
+    author = 'Unknown',
+    pages = '0',
+    isRead = false,
+  ) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.isRead = isRead;
+  }
 }
 
 //set initial display of the form to none
 form.style.display = 'none';
 
-//function to show fofrm and log library with the add book button
+//function to show form and log library with the add book button
 function addBook() {
-    addBtn.addEventListener('click', () => {
-        
-        logBook()
-    })
+  addBtn.addEventListener('click', () => {
+    form.style.display = 'block';
+  });
+    
 }
 
 addBook();
@@ -41,48 +40,50 @@ addBook();
 let myLibrary = [];
 
 //use form to add a new book with a function in global scope
-
-
 function logBook() {
-    form.style.display = 'block';
-    form.addEventListener("submit", (event) => {
-        event.preventDefault();
-        title = bookTitle.value;
-        author = authorName.value;
-        pages = pageNo.value;
-        isRead = readQ.checked ? "Read" : "Unread";
-        const bookInfo = new Book(title, author, pages, isRead);
-        myLibrary.push(bookInfo);
-        form.reset();
-        const library = document.createElement('div');
-        library.classList.add('library');
-        
-    const titleElement = document.createElement("h2");
-    titleElement.textContent = `${bookInfo.title}`;
+  event.preventDefault();
+  const title = bookTitle.value;
+  const author = authorName.value;
+  const pages = pageNo.value;
+  const isRead = readQ.checked ? 'Read' : 'Unread';
+  const bookInfo = new Book(title, author, pages, isRead);
+  myLibrary.push(bookInfo);
+  form.reset();
+  displayLibrary();
+  form.style.display = 'none';
+}
 
-    const authorElement = document.createElement("p");
-    authorElement.textContent = `Author: ${bookInfo.author}`;
+// function to display the library
+function displayLibrary() {
+  displayContainer.innerHTML = '';
+  //loop over the elements in the array
+  myLibrary.forEach((book) => {
+    //create new elements and settheir inner html to book object values
+    const library = document.createElement('div');
+    library.classList.add('library');
 
-    const pagesElement = document.createElement("p");
-    pagesElement.textContent = `Pages: ${bookInfo.pages}`;
-
-    const readElement = document.createElement("p");
-    readElement.textContent = `Status: ${bookInfo.isRead}`;    
+    const titleElement = document.createElement('h2');
+    titleElement.textContent = book.title;
     
+    const authorElement = document.createElement('p');
+    authorElement.textContent = `Author: ${book.author}`;
+    
+    const pagesElement = document.createElement('p');
+    pagesElement.textContent = `Pages: ${book.pages}`;
+    
+    const readElement = document.createElement('p');
+    readElement.textContent = `Status: ${book.isRead}`;
+
+    //append the new elements to the library
     library.appendChild(titleElement);
     library.appendChild(authorElement);
     library.appendChild(pagesElement);
     library.appendChild(readElement);
-
     displayContainer.appendChild(library);
-        form.style.display = 'none'
-    });
-   
+  });
 }
 
-logBook();
-
-
+form.addEventListener('submit', logBook);
 
 
 
