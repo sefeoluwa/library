@@ -84,12 +84,25 @@ function displayLibrary() {
 
     readElement.addEventListener('click', toggleClass)
     
+    //remove a book from the library
+    const removeBook = document.createElement('p')
+    removeBook.classList.add = 'remove-book';
+    removeBook.textContent = "Remove";
+    removeBook.addEventListener('click', () => {
+        const bookElement = event.target.parentNode; // get the parent element of the clicked 'remove' button
+        const bookIndex = Array.from(bookElement.parentNode.children).indexOf(bookElement); // get the index of the book element within its parent
+        myLibrary.splice(bookIndex, 1); // remove the book object from the array
+        bookElement.remove(); // remove the book element from the DOM
+    } )
+
+    
 
     //append the new elements to the library
     library.appendChild(titleElement);
     library.appendChild(authorElement);
     library.appendChild(pagesElement);
     library.appendChild(readElement);
+    library.appendChild(removeBook)
     displayContainer.appendChild(library);
   });
 }
