@@ -5,7 +5,8 @@
 }
 
 :root{
-    --primary-color: ;
+    --primary-color: #513162;
+    --secondary-color: #FF7AF5;
 }
 
 .main{
@@ -70,7 +71,7 @@
 
 .add-book:hover{
     background-color: #fff;
-    color:#513162;
+    color:var(--primary-color);
     border:none;
 }
 
@@ -86,7 +87,7 @@
     padding: 3% 5%;
     height:50vh;
     width:60vw;
-    background-color: #513162;
+    background-color: var(--primary-color);
     font-size: 1.4em;
 }
 
@@ -102,7 +103,7 @@
 input{
     height:30px;
     width:50vw;
-    color:#513162;
+    color:var(--primary-color);
     padding-left: 5px;
     outline:none;
     font-size: 1.2rem;
