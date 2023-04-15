@@ -6,7 +6,7 @@ const authorName = document.getElementById('author');
 const pageNo = document.getElementById('pages');
 const readQ = document.getElementById('read');
 const submitBtn = document.getElementsByClassName('submit-btn');
-const displayConstainer = document.querySelector('.display-container');
+const displayContainer = document.getElementById('display');
 
 //declare book object
 class Book{
@@ -29,7 +29,6 @@ let myLibrary = [];
 
 //use form to add a new book with a function in global scope
 
-    logBook();
 
 function logBook() {
     form.addEventListener("submit", (event) => {
@@ -38,20 +37,38 @@ function logBook() {
         author = authorName.value;
         pages = pageNo.value;
         isRead = readQ.checked ? "Read" : "Unread";
-
-
-
         const bookInfo = new Book(title, author, pages, isRead);
         myLibrary.push(bookInfo);
-        console.log(myLibrary);
         form.reset();
+        const library = document.createElement('div');
+        
+    const titleElement = document.createElement("h2");
+    titleElement.textContent = `${bookInfo.title}`;
+
+    const authorElement = document.createElement("p");
+    authorElement.textContent = `Author: ${bookInfo.author}`;
+
+    const pagesElement = document.createElement("p");
+    pagesElement.textContent = `Pages: ${bookInfo.pages}`;
+
+    const readElement = document.createElement("p");
+    readElement.textContent = `Status: ${bookInfo.isRead}`;    
+    
+    library.appendChild(titleElement);
+    library.appendChild(authorElement);
+    library.appendChild(pagesElement);
+    library.appendChild(readElement);
+
+    displayContainer.appendChild(library);
+
     });
    
 }
 
+logBook();
 
 
-//function to repeat form log on submit
-function addBookToLibrary(){
-       
-}
+
+
+
+    
