@@ -81,6 +81,8 @@ function displayLibrary() {
     } else {
         readElement.classList.add('unread-element');
     }
+
+    readElement.addEventListener('click', toggleClass)
     
 
     //append the new elements to the library
@@ -94,6 +96,9 @@ function displayLibrary() {
 
 form.addEventListener('submit', logBook);
 
-
-
-    
+function toggleClass(event) {
+    const element = event.target;
+    element.classList.toggle('read-element');
+    element.classList.toggle('unread-element');
+  }
+  
