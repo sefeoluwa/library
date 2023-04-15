@@ -86,7 +86,7 @@ function displayLibrary() {
     
     //remove a book from the library
     const removeBook = document.createElement('button')
-    removeBook.classList.add = 'remove-book';
+    removeBook.classList.add('remove-book');
     removeBook.textContent = "Remove";
     removeBook.addEventListener('click', () => {
         const bookElement = event.target.parentNode; // get the parent element of the clicked 'remove' button
@@ -113,5 +113,10 @@ function toggleClass(event) {
     const element = event.target;
     element.classList.toggle('read-element');
     element.classList.toggle('unread-element');
+    if (event.target.textContent === 'Status: Read') {
+        event.target.textContent = 'Status: Unread';
+      } else {
+        event.target.textContent = 'Status: Read';
+      }
   }
   
