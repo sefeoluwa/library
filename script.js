@@ -74,7 +74,7 @@ function displayLibrary() {
     pagesElement.textContent = `Pages: ${book.pages}`;
     pagesElement.classList.add('pages-element');
     
-    const readElement = document.createElement('p');
+    const readElement = document.createElement('button');
     readElement.textContent = `Status: ${book.isRead}`;
     if (readElement.textContent === 'Status: Read'){
         readElement.classList.add('read-element');
@@ -85,7 +85,7 @@ function displayLibrary() {
     readElement.addEventListener('click', toggleClass)
     
     //remove a book from the library
-    const removeBook = document.createElement('p')
+    const removeBook = document.createElement('button')
     removeBook.classList.add = 'remove-book';
     removeBook.textContent = "Remove";
     removeBook.addEventListener('click', () => {
