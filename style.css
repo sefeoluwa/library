@@ -179,8 +179,3 @@ input{
     font-weight: bold;
     padding-top: 4px;
 }
-
-
-  .book-form, .book-display{
-    display:none;
-  }
