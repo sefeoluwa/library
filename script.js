@@ -64,15 +64,19 @@ function displayLibrary() {
 
     const titleElement = document.createElement('h2');
     titleElement.textContent = book.title;
+    titleElement.classList.add('title-element');
     
     const authorElement = document.createElement('p');
     authorElement.textContent = `Author: ${book.author}`;
+    authorElement.classList.add('author-element');
     
     const pagesElement = document.createElement('p');
     pagesElement.textContent = `Pages: ${book.pages}`;
+    pagesElement.classList.add('pages-element');
     
     const readElement = document.createElement('p');
     readElement.textContent = `Status: ${book.isRead}`;
+    readElement.classList.add('read-element');
 
     //append the new elements to the library
     library.appendChild(titleElement);
