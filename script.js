@@ -24,6 +24,19 @@ class Book{
 
 }
 
+//set initial display of the form to none
+form.style.display = 'none';
+
+//function to show fofrm and log library with the add book button
+function addBook() {
+    addBtn.addEventListener('click', () => {
+        
+        logBook()
+    })
+}
+
+addBook();
+
 //create array to store book objects in global scope
 let myLibrary = [];
 
@@ -31,6 +44,7 @@ let myLibrary = [];
 
 
 function logBook() {
+    form.style.display = 'block';
     form.addEventListener("submit", (event) => {
         event.preventDefault();
         title = bookTitle.value;
@@ -41,6 +55,7 @@ function logBook() {
         myLibrary.push(bookInfo);
         form.reset();
         const library = document.createElement('div');
+        library.classList.add('library');
         
     const titleElement = document.createElement("h2");
     titleElement.textContent = `${bookInfo.title}`;
@@ -60,7 +75,7 @@ function logBook() {
     library.appendChild(readElement);
 
     displayContainer.appendChild(library);
-
+        form.style.display = 'none'
     });
    
 }
