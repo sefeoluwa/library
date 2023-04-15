@@ -24,19 +24,34 @@ class Book{
 
 }
 
-//create array to store book objects
+//create array to store book objects in global scope
 let myLibrary = [];
 
-//use form to add a new book
+//use form to add a new book with a function in global scope
 
+    logBook();
+
+function logBook() {
     form.addEventListener("submit", (event) => {
         event.preventDefault();
-            title = bookTitle.value;
-            author = authorName.value;
-            pages = pageNo.value;
-            isRead = readQ.value;
+        title = bookTitle.value;
+        author = authorName.value;
+        pages = pageNo.value;
+        isRead = readQ.checked ? "Read" : "Unread";
 
-        const bookInfo = new Book(title, author, pages, isRead)
-        console.log(bookInfo)
-    })
 
+
+        const bookInfo = new Book(title, author, pages, isRead);
+        myLibrary.push(bookInfo);
+        console.log(myLibrary);
+        form.reset();
+    });
+   
+}
+
+
+
+//function to repeat form log on submit
+function addBookToLibrary(){
+       
+}
