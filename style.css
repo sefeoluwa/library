@@ -75,25 +75,20 @@
     color:#fff;
 }
 .book-form{
-    margin: 5vh 12vw;
+    margin-top: 25vh;
+    margin-left: 20vw;
     padding: 3% 5%;
     height:50vh;
     width:60vw;
     background-color: var(--primary-color);
     font-size: 1.4em;
-    display: none;
+    z-index: 1000;
+    position:absolute;
     border-radius: 15px;
     box-shadow: 0 4px 6px #fff inset;
+    flex-direction:column;
 }
-.form-container{
-    height: 50vh;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
-   
-}
+
 input{
     height:30px;
     width:50vw;
