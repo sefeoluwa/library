@@ -82,6 +82,8 @@
     background-color: var(--primary-color);
     font-size: 1.4em;
     display: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px #fff inset;
 }
 .form-container{
     height: 50vh;
@@ -151,6 +153,8 @@ input{
     color:#513162;
     font-size: 1.2rem;
     position: relative;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px #000;
 }
 .result-title{
     font-size: 1.3em;
@@ -198,6 +202,12 @@ input{
     cursor:pointer;
     font-weight: 1000;
     border-radius: 6px;
+    transition: all .2s ease-in-out;
+}
+
+.remove-book:hover{
+    background-color: #513162;
+    color:red;
 }
 
 @media screen and (min-width: 500px) {
@@ -253,6 +263,7 @@ input{
     .library{
         width:20vw;
         height:35vh;
+        pointer-events: auto;
     }
 
 
@@ -269,6 +280,15 @@ input{
     
     .book-form{
         width:30vw;
+        
+        height: 50vh;
+    }
+
+    .form-container{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 
     .book-form input{
