@@ -76,11 +76,6 @@ function displayLibrary() {
     
     const readElement = document.createElement('button');
     readElement.textContent = `Status: ${book.isRead}`;
-    if (readElement.textContent === 'Status: Read'){
-        readElement.classList.add('read-element');
-    } else {
-        readElement.classList.add('unread-element');
-    }
 
     readElement.addEventListener('click', toggleClass)
     readElement.addEventListener('touchstart', toggleClass);
@@ -106,13 +101,15 @@ function displayLibrary() {
 
 form.addEventListener('submit', logBook);
 
+//function to toggle classlist
 function toggleClass(event) {
     const element = event.target;
     element.classList.toggle('read-element');
-    element.classList.toggle('unread-element');
     if (event.target.textContent === 'Status: Read') {
+        element.classList.toggle('unread-element');
         event.target.textContent = 'Status: Unread';
       } else {
+        element.classList.toggle('read-element');
         event.target.textContent = 'Status: Read';
       }
   }
