@@ -21,6 +21,7 @@
     width:100vw;
     display:flex;
     flex-direction: column;
+    overflow-y: hidden;
 }
 
 .navbar{
@@ -118,19 +119,37 @@ input{
 .check-box{
     display: flex;
     margin-top: 1.5vh;
-    
     width:65vw;
 }
 
+.check-box input:checked{
+    appearance: none;
+}
+
+.check-box input:checked::before {
+    content: "\2714";
+    color: #333;
+    font-size: 1.3em;
+    text-align: center;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #fff;
+    border: 2px solid #333;
+    border-radius: 4px;
+    margin-right: 3vw;
+  }
+  
+
 .read{
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     width:41vw;
 }
 
 #read{
    width:10vw;
   
-}
+} 
 
 .submit-btn{
     font-size: 1.2rem;
@@ -219,3 +238,39 @@ input{
 }
    
 
+@media screen and (min-width: 500px) {
+    .display-container{
+        flex-direction:row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .library{
+        width:35vw;
+        height:35vh;
+    }
+
+    .unread-element, .read-element, .remove-book{
+        width:30vw;
+    }
+
+    .form-container{
+        width:40vw;
+        display:flex;
+        justify-content: center;
+    }
+
+    .book-form{
+        width:45vw;
+        height:45vh;
+    }
+
+    .book-form input{
+        width:40vw;
+        height:4vh;
+    }
+
+    .check-box{
+        width:42vw;
+    }
+}
