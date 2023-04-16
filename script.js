@@ -1,6 +1,7 @@
 // getting values
 const addBtn = document.getElementById('add-book');
 const form = document.getElementById('book-form');
+const formContainer = document.getElementsByClassName('form-container')
 const bookTitle = document.getElementById('title');
 const authorName = document.getElementById('author');
 const pageNo = document.getElementById('pages');
@@ -22,11 +23,14 @@ class Book {
   }
 }
 //set initial display of the form to none
+
 form.style.display = 'none';
+
 //function to show form and log library with the add book button
 function addBook() {
   addBtn.addEventListener('click', () => {
-    form.style.display = 'block';
+    form.style.display = 'flex';
+  
   });
     
 }
@@ -130,8 +134,10 @@ function toggleClass(event) {
 
   //fucntion to remove a book
 function remove() {
+    if (displayContainer && displayContainer.children.length > 0){
     const bookElement = event.target.parentNode; // get the parent element of the clicked 'remove' button
         const bookIndex = Array.from(bookElement.parentNode.children).indexOf(bookElement); // get the index of the book element within its parent
         myLibrary.splice(bookIndex, 1); // remove the book object from the array
         bookElement.remove(); // remove the book element from the DOM
+    }
 }
