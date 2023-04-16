@@ -255,6 +255,7 @@ input{
         height:35vh;
     }
 
+
     .display-container{
         justify-content: space-between;
         
@@ -264,6 +265,33 @@ input{
         width:17vw;
         font-size:1.1rem;
         font-weight: 500;
-    }    
+    }  
+    
+    .book-form{
+        width:30vw;
+    }
+
+    .book-form input{
+        width:26vw;  
+        margin-top: 1vh;  
+    }
+
+    .check-box{
+        width:27.7vw;
+        margin-bottom: -2vh;
+    }
+
+    .check-box input{
+        width:3vw;
+        height: 3vh;
+        margin-top: -0.7vh;
+    }
+
+    .submit-btn{
+        width:20vw;
+        margin-left:3vw;
+        margin-bottom: 2vh;
+       
+    }
 
 }
