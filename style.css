@@ -228,8 +228,9 @@ input{
     }
 
     .book-form{
-        width:45vw;
+        width:49vw;
         height:45vh;
+        margin-left:24vw;
     }
 
     .book-form input{
@@ -237,9 +238,15 @@ input{
         height:4vh;
     }
 
+    .book-form > label, .book-form > input {
+       
+        margin-left: -1vw;
+    }
+
     .check-box{
         width:42vw;
         font-size:1.3em;
+        margin-left:-1.6vw;
     }
 
     .check-box input:checked::before{
@@ -254,7 +261,7 @@ input{
     }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1000px) {
     .library{
         width:20vw;
         height:35vh;
@@ -275,25 +282,27 @@ input{
     
     .book-form{
         width:30vw;
-        
+        margin-left:33vw;
         height: 50vh;
     }
 
-    .form-container{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+    .book-form > label, .book-form > input {
+       
+        margin-left: -3vw;
     }
+
+   
 
     .book-form input{
         width:26vw;  
-        margin-top: 1vh;  
+        margin-top: 1vh; 
+        
     }
 
     .check-box{
         width:27.7vw;
         margin-bottom: -2vh;
+        margin-left: -3vw;
     }
 
     .check-box input{
@@ -304,7 +313,7 @@ input{
 
     .submit-btn{
         width:20vw;
-        margin-left:3vw;
+        
         margin-bottom: 2vh;
        
     }
